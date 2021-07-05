@@ -1,0 +1,440 @@
+.table {
+
+
+  &.is-border {
+
+    tr {
+      border-top: 1px solid $border-color;
+    }
+  }
+}
+
+.table td,
+.table th {
+  padding: .5rem 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid $border-color;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  color: $body-light;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+
+
+@media (max-width: 1440px) {
+  .table-responsive-xl {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive-xl>.table-bordered {
+    border: 0;
+  }
+}
+
+
+
+.naxa-table {
+  display: block;
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+
+  table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: $body-color;
+    @include radius(5px);
+    // table-layout: fixed;
+    // overflow: hidden;
+    border-collapse: collapse;
+
+    thead {
+      tr {
+        &:not(:last-child) {
+          th {
+            text-align: center;
+
+          }
+        }
+      }
+    }
+
+    .custom-checkbox {
+      margin: 0;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    h5 {
+      font-family: $body-fonts;
+      font-size: $font-size-h6;
+    }
+
+    .subtitle-meta {
+      b {
+        font-size: $font-size-small;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+
+      time {
+        color: $heading-color;
+
+        &::before {
+          content: "";
+          width: 3px;
+          height: 3px;
+          @include radius(50%);
+          display: inline-flex;
+          background-color: $body-color;
+          margin: 0 .5rem;
+        }
+      }
+    }
+
+    .fiscal-year {
+      color: $body-light;
+
+      time,
+      span {
+        font-weight: 500;
+        color: $heading-color
+      }
+    }
+
+    h6 {
+      font-family: $body-fonts;
+      font-weight: 500;
+      font-size: $font-paragraph;
+    }
+
+    .updown-arrow {
+      @include display-flex(flex);
+      @include justify-content-center;
+      @include align-items-center;
+      @include flex-direction-column(column);
+
+      i {
+        line-height: .45;
+        cursor: pointer;
+        font-size: 1rem;
+        color: $secondary-color;
+      }
+    }
+
+    th {
+      vertical-align: middle;
+      font-weight: 500;
+      font-size: $font-size-small;
+
+      &.serial-no {
+        width: 50px;
+      }
+
+      &.is-bg {
+        background-color: $secondary-100;
+        color: $heading-color;
+        font-weight: 600;
+      }
+
+      .custom-checkbox {
+        margin: 0;
+      }
+    }
+
+    td {
+      color: $heading-color;
+
+      time {
+        font-weight: 600;
+      }
+
+      span {
+        &.serial-no {
+          color: $body-light;
+        }
+      }
+
+      b {
+        font-weight: 500;
+        color: $heading-color;
+
+        &.counter {
+          margin-left: .6125rem;
+        }
+
+        @media #{breakpoint-desktop} {
+          font-size: .775rem;
+        }
+      }
+    }
+
+
+    .icons {
+      @include display-flex(flex);
+      @include justify-content-end;
+      @include align-items-center;
+
+      i {
+        font-size: 1rem;
+        cursor: pointer;
+        color: $body-light;
+        @include display-flex(flex);
+        @include justify-content-center;
+        @include align-items-center;
+        @include flex-direction-column(column);
+        height: 22px;
+        width: 22px;
+      }
+
+      span {
+        .custom-dropdown-menu {
+          i {
+            width: initial;
+            height: initial;
+            border: 0;
+          }
+        }
+
+        &:not(:last-child) {
+          margin-right: .6125rem;
+        }
+      }
+    }
+
+    tr {
+      @include transition(all .5s ease-in-out);
+
+      &:hover {
+        background-color: $secondary-light;
+      }
+    }
+  }
+
+  &.is-sticky {
+    overflow-x: unset;
+
+    table {
+      th {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background-color: $white-color;
+        z-index: 1;
+        padding: .5rem .6125rem;
+      }
+    }
+  }
+
+  &.is-white {
+    table {
+      tr {
+        border-bottom: 1px solid $border-color;
+
+        td {
+          background-color: $white-color;
+        }
+      }
+    }
+
+    &.is-sticky {
+      table {
+        th {
+          background-color: $bg-color;
+        }
+      }
+    }
+  }
+
+  &.non-overflow {
+    overflow-y: initial;
+
+    table {
+
+      th,
+      td {
+        border: none;
+        padding: .6125rem .775rem;
+      }
+
+
+    }
+  }
+
+
+
+  &.is-siteinfo {
+    table {
+      b {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+}
+
+.campaign-status {
+  color: $secondary-color;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+.table-status {
+  @include display-flex(flex);
+  @include align-items-center;
+
+  [class*=status] {
+    @include display-flex(flex);
+    @include justify-content-center;
+    @include align-items-center;
+    color: $body-color;
+    @include radius(20px);
+    cursor: pointer;
+    @include transition(all .4s ease-in-out);
+    min-width: 28px;
+    min-height: 28px;
+    margin-right: -4px;
+    border: 1px solid $white-color;
+    @include transform(scale(1));
+    position: relative;
+
+    &.is-pd {
+      padding: .5px 10px;
+      text-transform: capitalize;
+    }
+
+    &.is-request-approval {
+      background-color: $blue-light;
+      color: $blue-color;
+    }
+
+    &.is-data-processing {
+      background-color: $red-light;
+      color: $red-color;
+    }
+
+    &.is-complete {
+      background-color: $green-light;
+      color: $primary-color;
+    }
+
+    &.is-initial {
+      background-color: $orange-light;
+      color: $orange-color;
+    }
+
+    &.is-ongoing {
+      background-color: $orange-dark-light;
+      color: $orange-dark;
+    }
+
+    &.is-request-approved {
+      background-color: $purple-light;
+      color: $purple-color;
+    }
+
+    &.is-offline {
+      background-color: $secondary-light;
+      color: $secondary-color;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      @include radius(50%);
+    }
+
+    &:hover {
+      @include transform(scale(1.2));
+    }
+  }
+
+  &.is-start {
+    @include justify-content-start;
+  }
+
+  &.is-end {
+    @include justify-content-end;
+  }
+
+  &.is-center {
+    @include justify-content-center;
+  }
+}
+
+.table-pagination {
+  .paging-left {
+    .custom-select {
+      max-width: 80px;
+
+      p {
+        &.selected-item {
+          min-width: 80px;
+        }
+      }
+
+      .select-list {
+        top: auto;
+        bottom: 100%;
+        min-width: 80px;
+
+      }
+    }
+
+    span {
+      &.row-text {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .paging-right {
+    flex-grow: 1;
+
+    input {
+      max-width: 50px;
+      height: calc(1em + 0.75rem + 2px);
+    }
+  }
+
+  p {
+    &.row-count {
+      span {
+        &:nth-child(2) {
+          margin: 0 0.5rem;
+        }
+      }
+    }
+
+    &.next-prev {
+      span {
+        cursor: pointer;
+      }
+    }
+
+    &.jumps {
+      span {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+}

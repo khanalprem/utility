@@ -1,0 +1,50 @@
+/*
+Template Name: Geodetic Portal;
+Template URI:
+Author: Prem Prasad Khanal
+Author URI: http://premkhanal.com.np/
+Description: Geodetic Portal is the first humanitarian digital platform designed for project monitoring and infrastructure quality assurance. 
+Version: 1.0.0
+Primary use: Monitoring system
+*/
+// @import "aos/aos.scss";
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+
+
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
+
+/* pages
+--------------------------------------------- */
+@import "pages/pages";

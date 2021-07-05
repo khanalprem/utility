@@ -1,0 +1,116 @@
+.search-bar {
+    @include display-flex(flex);
+    @include justify-content-start;
+    @include align-items-center;
+
+    .search-wrap {
+        @include display-flex(flex);
+        @include justify-content-between;
+        border: 1px solid $border-color;
+        @include align-items-stretch;
+        background-color: $secondary-100;
+        flex-grow: 1;
+        max-width: 240px;
+        @include radius(10px);
+
+        input {
+            &.form-control {
+                flex-grow: 1;
+                height: calc(1.3rem + .75rem + 2px);
+                border: none;
+                display: initial;
+                background-color: $secondary-100;
+
+                &:focus {
+                    background-color: $secondary-100;
+                }
+
+                @include input-placeholder {
+                    color: $body-color;
+                }
+            }
+        }
+
+        span {
+            padding: 0 .5rem;
+            padding-right: 0;
+            text-align: center;
+            @include display-flex(flex);
+            @include justify-content-center;
+            @include align-items-center;
+            @include flex-direction-column(column);
+            cursor: pointer;
+
+            i {
+                font-size: 1.2rem;
+                color: $gray-200;
+            }
+
+            &.is-right {
+                padding-right: .5rem;
+                padding-left: 0;
+            }
+        }
+    }
+
+    button {
+        padding: 0;
+        width: 40px;
+        height: 37px;
+        min-width: initial;
+        border-color: $border-dark;
+        @include radius(8px);
+        margin-left: .6125rem;
+        background-color: $white-color;
+        color: $secondary-color;
+        margin-left: 1rem;
+
+        &:focus,
+        &:hover {
+            background-color: $secondary-color;
+            color: $white-color;
+            outline: none;
+            -webkit-outline: none;
+            box-shadow: none;
+        }
+    }
+
+    a {
+        &.toggle-icon {
+            margin-left: 1rem;
+            color: $body-color;
+
+            svg {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &.is-large {
+        .search-wrap {
+            @include box-shadow(0 15px 50px rgba($heading-color, .16));
+
+            input {
+                &.form-control {
+                    height: calc(3rem + .75rem + 2px);
+
+                    &:focus {
+                        background-color: $white-color;
+                    }
+
+                    @include input-placeholder {
+                        color: $heading-color;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    &.is-full {
+        .search-wrap {
+            max-width: 100%;
+        }
+    }
+}

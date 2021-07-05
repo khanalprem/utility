@@ -1,0 +1,76 @@
+.filter {
+
+  .filter-row {
+    .form-group {
+      margin: 0 10px 0 0;
+      max-width: 160px;
+
+      .common-button {
+        &.is-clear {
+          color: $secondary-color;
+        }
+      }
+
+      .program-count {
+        b {
+          font-family: $heading-fonts;
+          color: $heading-color;
+          margin-right: .5rem;
+        }
+      }
+
+
+      input {
+        &.form-control {
+          height: calc(1.5em + 0.75rem + 2px);
+
+          @include input-placeholder {
+            color: $border-color;
+            font-size: .775rem;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    .custom-select {
+
+      p {
+        display: block;
+
+        &.selected-item {
+          height: 2.3rem;
+          line-height: 2.3rem;
+          min-width: 80px;
+          color: $body-light;
+          font-weight: 500;
+          text-transform: capitalize;
+
+          &::after {
+            text-transform: initial
+          }
+
+          &.is-bg {
+            @include display-flex(flex);
+            line-height: initial;
+            height: initial;
+            color: $white-color;
+          }
+        }
+      }
+
+
+    }
+
+    .common-button {
+      padding: .5rem 1rem;
+    }
+
+  }
+}
+
+.filter-content {
+  flex-grow: 1;
+  display: none;
+
+}

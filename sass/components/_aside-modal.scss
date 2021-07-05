@@ -1,0 +1,263 @@
+/* canvas Sidebar */
+
+.aside-modal {
+    .aside-overlay {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background: $secondary-light;
+        z-index: 999999;
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+        @include transform(translateX(50px));
+        @include transition(all .3s ease-in-out);
+    }
+
+    .close-aside {
+        position: fixed;
+        z-index: 9999999;
+        font-size: 1rem;
+        right: -100%;
+        background-color: $primary-color;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        @include display-flex(flex);
+        @include justify-content-center();
+        @include align-items-center;
+        @include flex-direction-column(column);
+        cursor: pointer;
+
+        i {
+            color: $white-color;
+        }
+
+    }
+
+    .aside-sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        padding: 2rem;
+        height: 100%;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        @include transform(translateX(80px));
+        background-color: $white-color;
+        z-index: 999999;
+        @include transition(all 0.5s ease-in-out);
+
+
+    }
+
+
+
+    &.is-active {
+        .aside-overlay {
+            visibility: visible;
+            opacity: .8;
+            left: 0;
+            @include transform(translateX(0));
+        }
+
+        .close-aside {
+            right: 50%;
+        }
+
+        .aside-sidebar {
+            right: 0;
+            visibility: visible;
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+    }
+
+    .destination-header {
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h6 {
+            margin-top: .25rem;
+
+            a {
+                color: $primary-color;
+                font-family: $body-fonts;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: .875rem;
+            }
+        }
+
+        .time-dif {
+            max-width: 300px;
+        }
+
+        .is-time {
+            margin-top: 1rem;
+
+            .content {
+                h4 {
+                    color: $primary-color;
+                }
+
+                span {
+                    text-transform: capitalize;
+                }
+            }
+
+            i {
+                margin-right: .5rem;
+                font-size: 1.2rem;
+                line-height: 1;
+            }
+        }
+    }
+
+    .dec {
+        margin: 1rem 0;
+
+        p {
+            font-weight: 400;
+        }
+    }
+
+    .single-slider {
+        margin-bottom: 3rem;
+
+        .slick-dots {
+            text-align: left;
+            bottom: -25px !important;
+
+            li {
+                button {
+                    &::before {
+                        font-size: .775rem;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        &::before {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .acc {
+        .acc-list {
+            .acc-header {
+                h5 {
+                    font-size: 1.2rem;
+                    font-family: $body-fonts;
+                    font-weight: 700;
+                    color: $primary-color;
+                }
+
+                &::after {
+                    content: 'add_circle_outline';
+                    font-size: 1.5rem;
+                    color: $primary-color
+                }
+            }
+
+            .acc-body {
+                ul {
+                    &.is-list {
+
+
+                        &.is-before {
+                            li {
+                                padding-left: 2.5rem;
+
+                                &::before {
+                                    color: $green-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        &.is-after {
+            .acc-list {
+                &.is-active {
+                    .acc-header {
+                        &::after {
+                            content: 'remove_circle_outline'
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.hiking-details {
+
+    .hiking-title {
+        margin: 1.5rem 0;
+        font-size: 1.2rem;
+        font-family: $body-fonts;
+    }
+
+    .feedback {
+        textarea {
+            &.form-control {
+                background-color: $bg-color;
+            }
+        }
+    }
+}
+
+.review {
+    .review-list {
+        padding: .6125rem 0;
+
+        .is-figure {
+            margin-bottom: .6125rem;
+
+            figure {
+                @include flex(0 0 50px);
+                max-width: 50px;
+
+
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    @include radius(50%);
+                }
+            }
+
+            h5 {
+                font-family: $body-fonts;
+                font-weight: 500;
+                margin-left: 1rem;
+            }
+
+
+        }
+
+        p {
+            font-size: .875rem;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $border-color;
+        }
+
+    }
+}

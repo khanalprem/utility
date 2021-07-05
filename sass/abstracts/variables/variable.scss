@@ -1,0 +1,46 @@
+$heading-color:#FFFFFF;
+$body-color:#AEADAE;
+$body-light:#212121;
+$body-dark:#141414;
+$bg-color:#F5F5F5;
+$primary-color:#ECC319;
+$primary-light:#0dbc9d;
+$primary-dark:#075450;
+$secondary-color:#ECC319;
+$secondary-thin-light:#FDF9F4;
+$secondary-light:#FFEFEF;
+$secondary-100:#FDF9F4;
+$grey-color:#F1F4F9;
+$grey-light:#d7d7d7;
+$border-color:#424242;
+$border-dark:#C7C7C7;
+$white-color:#ffffff;
+$green-color:#43D05D;
+$green-light:rgba($green-color, .2);
+$blue-color:#416AFF;
+$blue-light:rgba($blue-color, .2);
+$orange-dark: #F88040;
+$orange-dark-light:rgba($orange-dark, .2);
+$orange-color:#FBBC04;
+$orange-light:rgba($orange-color, .2);
+$red-color:#CC2A2A;
+$red-light:rgba($red-color, .2);
+$purple-color:#A265DA;
+$purple-light:rgba($purple-color, .2);
+$shadow-color:#0000000D;
+
+// Color system
+
+// scss-docs-start gray-color-variables
+$white: #fff !default;
+$gray-100: #E2E2E2 !default;
+$gray-200: #BDBDBD !default;
+$gray-300: #9E9E9E !default;
+$gray-400: #757575 !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+// scss-docs-end gray-color-variables

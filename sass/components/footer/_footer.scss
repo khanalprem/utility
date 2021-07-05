@@ -1,0 +1,16 @@
+footer {
+    margin-top: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    z-index: 1;
+
+    .naxa-card {
+        border-radius: 0;
+
+        .is-back {
+            font-weight: 700;
+        }
+    }
+}

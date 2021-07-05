@@ -1,0 +1,517 @@
+[class*=common-button] {
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    font-size: $font-size-small;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: .5rem 1rem;
+    position: relative;
+    @include display-flex(flex);
+    @include justify-content-center;
+    @include align-items-center;
+    border: none;
+    outline: none;
+    line-height: inherit;
+    @include user-select(none);
+    overflow: hidden;
+    vertical-align: middle;
+    min-width: 100px;
+    // @include radius(20px);
+    cursor: pointer;
+    @include transition(all .5s ease-in-out);
+    position: relative;
+
+    &:focus {
+        border-color: $primary-color;
+    }
+
+
+
+    &.is-bg {
+        color: $white-color;
+        background-color: $secondary-color;
+
+        &:disabled,
+        &.is-disable {
+            background-color: $body-color;
+            cursor: not-allowed;
+            box-shadow: none;
+
+            &:hover {
+                background-color: $body-color;
+            }
+        }
+
+        &:hover {
+            background-color: $secondary-light;
+            color: $secondary-color;
+        }
+
+        &.is-dark {
+            background-color: $secondary-color;
+            min-width: 100px;
+            padding: .6125rem 1rem;
+            font-size: 1rem;
+
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+
+    }
+
+    &.is-light-bg {
+        color: $secondary-color;
+        background-color: $secondary-light;
+
+        &.is-icon {
+            color: $secondary-color;
+
+            i {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    &.is-auto {
+        min-width: initial;
+        min-height: initial;
+    }
+
+    &.is-full-line {
+        width: 100%;
+    }
+
+    &.is-clear {
+        background-color: transparent;
+        border-width: 0;
+        min-width: auto;
+        @include display-flex(flex);
+        @include justify-content-start;
+        @include align-items-center;
+        color: $heading-color;
+        font-size: .9375rem;
+        padding: 0;
+        min-height: initial;
+        min-width: initial;
+
+        svg {
+            margin-left: .5rem;
+            @include transition(margin .5s ease-in-out);
+        }
+
+        &:hover {
+            color: $secondary-color;
+
+            svg {
+                margin-left: .6125rem;
+            }
+        }
+    }
+
+    &.is-border {
+        background-color: $white-color;
+        color: $primary-color;
+        border: 1px solid;
+        border-color: $body-color;
+
+        &.is-icon {
+            @include display-flex(flex);
+            @include justify-content-start;
+            @include align-items-center;
+            color: $primary-color;
+
+            i {
+                margin-right: .5rem;
+            }
+        }
+
+        &:hover {
+            border-color: $primary-color;
+            background-color: $primary-light;
+        }
+
+        &:disabled,
+        &.is-disable {
+            color: $white-color;
+            background-color: transparent;
+            border: 1px solid $body-color;
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: transparent;
+                color: $body-color;
+                border-color: $body-color;
+            }
+        }
+    }
+
+    &.no-border {
+        background-color: transparent;
+        color: $secondary-color;
+        border-color: transparent;
+
+        &.is-icon {
+            @include display-flex(flex);
+            @include justify-content-start;
+            @include align-items-center;
+            color: $secondary-color;
+            font-size: .9375rem;
+
+            i {
+                margin-right: .5rem;
+            }
+        }
+    }
+
+    &.is-icon {
+        @include justify-content-between;
+        color: $white-color;
+
+        i {
+            margin-right: .5rem;
+            font-size: .9375rem;
+        }
+    }
+
+    &:disabled,
+    &.is-disable {
+        color: $white-color;
+        background-color: transparent;
+        border: 1px solid $border-color;
+        cursor: not-allowed;
+        box-shadow: none;
+
+        &:hover {
+            background-color: transparent;
+            color: $body-color;
+            border-color: $border-color;
+        }
+    }
+
+
+}
+
+[role="button"] {
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+
+
+
+.buttons {
+
+    button,
+    a {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    &.is-center {
+        @include display-flex(flex);
+        @include justify-content-center;
+        @include align-items-center;
+    }
+
+    &.is-between {
+        @include display-flex(flex);
+        @include justify-content-between;
+        @include align-items-center;
+    }
+
+    &.is-end {
+        @include display-flex(flex);
+        @include justify-content-end;
+        @include align-items-center;
+    }
+}
+
+[class*=circle-icon] {
+    width: 34px;
+    height: 34px;
+    @include display-flex(flex);
+    @include justify-content-center;
+    @include align-items-center;
+    @include flex-direction-column(column);
+    color: $body-color;
+    @include radius(100%);
+    min-height: 34px;
+    cursor: pointer;
+    @include transition(all .4s ease-in-out);
+
+    i {
+        font-size: 1.2rem;
+    }
+
+    &.is-bg {
+        background-color: $primary-light;
+        color: $primary-dark;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $white-color;
+        }
+    }
+
+    &.is-medium-icon {
+        width: 50px;
+        height: 50px;
+        min-height: 50px;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    &.is-border {
+        border: 1px solid $border-color;
+    }
+
+    &:not(:last-child) {
+        margin-right: .6125rem;
+    }
+}
+
+.buttons {
+
+    button,
+    a {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    &.is-center {
+        @include display-flex(flex);
+        @include justify-content-center;
+        @include align-items-center;
+    }
+
+    &.is-between {
+        @include display-flex(flex);
+        @include justify-content-between;
+        @include align-items-center;
+    }
+
+    &.is-end {
+        @include display-flex(flex);
+        @include justify-content-end;
+        @include align-items-center;
+    }
+
+    &.is-start {
+        @include display-flex(flex);
+        @include justify-content-start;
+        @include align-items-center;
+    }
+}
+
+
+
+
+[class*=square-icon] {
+    width: 50px;
+    height: 50px;
+    @include display-flex(flex);
+    @include justify-content-center;
+    @include align-items-center;
+    @include flex-direction-column(column);
+    color: $body-color;
+    @include radius(5px);
+    cursor: pointer;
+    @include transition(all .4s ease-in-out);
+
+    &.is-blue {
+        background-color: $blue-light;
+    }
+
+    &.is-red {
+        background-color: $red-light;
+    }
+
+    &.is-green {
+        background-color: $primary-light;
+    }
+
+    &.is-orange {
+        background-color: $orange-light;
+    }
+}
+
+.close-icon {
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    @include display-flex(flex);
+    @include justify-content-center;
+    @include align-items-center;
+    @include flex-direction-column(column);
+    border: 1px solid $border-color;
+    @include radius(100%);
+    @include transition(all .5s ease-in-out);
+    cursor: pointer;
+
+    &:hover {
+        color: $red-color;
+        border-color: $red-color;
+    }
+}
+
+.icons {
+    @include display-flex(flex);
+    @include justify-content-end;
+    @include align-items-center;
+
+    i {
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    span {
+        &:not(:last-child) {
+            margin-right: .6125rem;
+        }
+    }
+}
+
+.is-status {
+    padding: .25rem .6125rem;
+    font-size: .875rem;
+    @include radius(24px);
+
+    &.is-pd {
+        padding: .5px 10px;
+        text-transform: capitalize;
+    }
+
+    &.is-request-approval {
+        background-color: $blue-light;
+        color: $blue-color;
+    }
+
+    &.is-data-processing {
+        background-color: $red-light;
+        color: $red-color;
+    }
+
+    &.is-complete {
+        background-color: $green-light;
+        color: $primary-light;
+    }
+
+    &.is-initial {
+        background-color: $orange-light;
+        color: $orange-color;
+    }
+
+    &.is-ongoing {
+        background-color: $orange-dark-light;
+        color: $orange-dark;
+    }
+
+    &.is-request-approved {
+        background-color: $purple-light;
+        color: $purple-color;
+    }
+
+    &.is-offline {
+        background-color: $secondary-light;
+        color: $secondary-color;
+    }
+}
+
+.is-circle {
+    @include display-flex(flex);
+    @include justify-content-center;
+    @include align-items-center;
+    @include flex-direction-column(column);
+    color: $body-color;
+    @include radius(100%);
+    cursor: pointer;
+    @include transition(all .4s ease-in-out);
+    position: relative;
+
+    &.is-md {
+        width: 60px;
+        height: 60px;
+        @include flex(0 0 60px);
+        max-width: 60px;
+
+    }
+
+    &.is-lg {
+        width: 80px;
+        height: 80px;
+        @include flex(0 0 80px);
+        max-width: 80px;
+    }
+
+    &.is-sm {
+        width: 40px;
+        height: 40px;
+        @include flex(0 0 40px);
+        max-width: 40px;
+    }
+
+    &.is-xs {
+        width: 32px;
+        height: 32px;
+        @include flex(0 0 32px);
+        max-width: 32px;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        @include radius(50%);
+    }
+
+    &.is-img {
+        overflow: hidden;
+    }
+}
+
+.is-icon {
+    margin-right: .6125rem;
+
+    &.is-md {
+        width: 60px;
+        height: 60px;
+        @include flex(0 0 60px);
+        max-width: 60px;
+
+    }
+
+    &.is-lg {
+        width: 80px;
+        height: 80px;
+        @include flex(0 0 80px);
+        max-width: 80px;
+    }
+
+    &.is-sm {
+        width: 40px;
+        height: 40px;
+        @include flex(0 0 40px);
+        max-width: 40px;
+    }
+
+    &.is-xs {
+        width: 32px;
+        height: 32px;
+        @include flex(0 0 32px);
+        max-width: 32px;
+    }
+}

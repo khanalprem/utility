@@ -1,0 +1,213 @@
+.is-italic {
+    font-style: italic;
+    color: $primary-color;
+}
+
+.is-dark {
+    background-color: $body-dark;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.is-title {
+    p {
+        max-width: 768px;
+        margin: 0 auto;
+        color: $white-color;
+        font-weight: 500;
+    }
+
+    &.is-center {
+        text-align: center;
+    }
+}
+
+.utility-banner {
+    padding: 5rem 0;
+    position: relative;
+
+    .pattern {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .banner-inner {
+        min-height: calc(100vh - 39vh);
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+        font-size: 3.2rem;
+        line-height: 1.3;
+    }
+
+    p {
+        font-size: $font-size-h5;
+        color: $white-color;
+        font-weight: 500;
+    }
+
+    figure {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+.scroll-link {
+    color: $primary-color;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+
+
+    i {
+        border: 1px solid $primary-color;
+        width: 28px;
+        height: 28px;
+        @include radius(50%);
+        @include flex-direction-column(column);
+        margin-right: .5rem;
+    }
+
+    span {
+        text-transform: capitalize;
+    }
+
+    &:hover {
+        color: $primary-color
+    }
+}
+
+.is-title {
+    h2 {
+        font-size: $font-size-h1;
+        font-weight: normal;
+    }
+}
+
+.whatis-utility {
+    position: relative;
+    padding: 5rem 0;
+
+
+    .whatis-figure-mobile {
+        display: block;
+        position: relative;
+
+        @media #{$breakpoint-lg} {
+            display: none;
+        }
+    }
+
+    .whatis-figure {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 48%;
+        z-index: 1;
+        display: none;
+
+        img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            z-index: 3;
+        }
+
+        @media #{$breakpoint-lg} {
+            display: block;
+        }
+    }
+
+    figcaption {
+        padding: 1.5rem;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($body-dark, .7);
+        z-index: 5;
+
+        h4 {
+            font-family: $body-fonts;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: $font-size-h5;
+        }
+
+        .ficaption-inner {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+
+    .whatis-summary {
+        p {
+            font-weight: 500;
+        }
+
+        h5 {
+            font-weight: 600;
+            font-family: $body-fonts;
+        }
+
+        .summary-card {
+            border: 1px solid $border-color;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            @include transition(all .5s ease-in-out);
+            overflow: hidden;
+
+            .is-icon {
+                margin-right: 1rem;
+
+                svg {
+                    fill: $body-color;
+                }
+            }
+
+            &.is-active,
+            &:hover {
+                border-color: $primary-color;
+                background-color: $body-light;
+
+                h5 {
+                    color: $primary-color;
+                }
+
+                .is-icon {
+
+
+                    svg {
+                        fill: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.feature {
+    .is-title {
+        margin-bottom: 4rem;
+    }
+
+    .feature-card {
+        figure {
+            overflow: hidden;
+        }
+    }
+}

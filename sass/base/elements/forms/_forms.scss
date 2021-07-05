@@ -1,0 +1,29 @@
+@import "switcher";
+@import "button";
+@import "field";
+@import "checkbox";
+@import "search";
+@import "social-icons";
+@import "custom-dropdown";
+@import "custom-select";
+@import "custom-upload";
+@import "progress";
+@import "./date-picker";
+@import "range-slider";
+
+
+
+.form-group {
+    select {
+        &.form-control {
+            font-size: .875rem;
+            -webkit-outline: none;
+            outline: none;
+
+            &:focus {
+                box-shadow: none;
+                border-color: $secondary-color;
+            }
+        }
+    }
+}

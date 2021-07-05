@@ -1,0 +1,169 @@
+.switch-filter {
+  @include display-flex(flex);
+  @include align-items-center;
+  @include justify-content-between;
+  padding: .6125rem 1rem;
+
+  h6 {
+    color: $heading-color;
+    font-weight: 600;
+    font-size: .7125rem;
+    flex-grow: 1;
+    position: relative;
+    padding-right: 1.5rem;
+    padding-left: 1rem;
+    flex-grow: 1;
+    margin: 0;
+    @include transition(all .4s ease-in-out);
+
+    img {
+      position: absolute;
+      left: 0;
+      max-width: 14px;
+      top: -1px;
+    }
+
+    i {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      @include radius(50%);
+      left: 0;
+      top: 2px;
+    }
+
+    // &.green{
+    //     &::before{
+    //         background-color: $green-color;
+    //         -webkit-animation: greenpulse 2s infinite;
+    //     -moz-animation: greenpulse 2s infinite;
+    //     animation: greenpulse 2s infinite;
+    //     }
+    // }
+    // &.orange{
+    //     &::before{
+    //         background-color:$orange-color;
+    //         -webkit-animation: orangepulse 2s infinite;
+    //     -moz-animation: orangepulse 2s infinite;
+    //     animation: orangepulse 2s infinite;
+    //     }
+    // }
+    // &.red{
+    //     &::before{
+    //         background-color:$red-color;
+    //         -webkit-animation: redpulse 2s infinite;
+    //     -moz-animation: redpulse 2s infinite;
+    //     animation: redpulse 2s infinite;
+    //     }
+    // }
+    // &.red-dark{
+    //     &::before{
+    //         background-color:$red-dark;
+    //         -webkit-animation: purplepusle 2s infinite;
+    //     -moz-animation: purplepusle 2s infinite;
+    //     animation: purplepusle 2s infinite;
+    //     }
+    // }
+    // &.yellow{
+    //     &::before{
+    //         background-color:$yellow-color;
+    //         -webkit-animation: yellowpulse 2s infinite;
+    //     -moz-animation: yellowpulse 2s infinite;
+    //     animation: yellowpulse 2s infinite;
+    //     }
+    // }
+    &:hover {
+      color: $secondary-color;
+    }
+
+  }
+
+
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin: 0;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $border-color;
+    @include transition(.4s ease-in-out);
+    @include radius(30px);
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 2px;
+      bottom: 3px;
+      @include radius(50%);
+      background-color: $white-color;
+      @include transition(.4s ease-in-out);
+      @include box-shadow(0 1px 6px rgba($border-color, 0.5));
+    }
+
+  }
+
+  input:checked+.switch-slider {
+    background-color: $primary-color;
+  }
+
+  input:checked+.switch-slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+
+}
+
+.is-qty {
+  span {
+    background-color: $secondary-color;
+    @include display-flex(flex);
+    @include justify-content-center;
+    @include align-items-center;
+    @include flex-direction-column(column);
+    padding: .5rem;
+    @include radius(10px);
+    position: relative;
+    z-index: 2;
+
+    i {
+      font-size: 1.1rem;
+      color: $white-color;
+    }
+
+    &.dec-qty {
+      margin-right: -14px;
+    }
+
+    &.inc-qty {
+      margin-left: -14px;
+    }
+  }
+
+
+  input {
+    &.form-control {
+      background-color: $white-color;
+      max-width: 80px;
+      padding: 0.375rem 1.5rem;
+    }
+  }
+}
