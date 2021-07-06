@@ -10,18 +10,54 @@ Primary use: Digital platform
 
 (function ($) {
   $(document).ready(function () {
-    function smoothScroll() {
-      $('.main-navigation li a').on('click', function (e) {
-        e.preventDefault();
+    /*==================================
+   Toggle Button
+ ==================================*/
+    $('.toggle-button').on('click', function (e) {
+      e.preventDefault();
+      $('body').toggleClass('Is-toggle');
+      $(this).toggleClass('is-active');
+    });
 
-        $('html, body').animate(
-          {
-            scrollTop: $($(this).attr('href')).offset().top,
-          },
-          900,
-          'linear'
-        );
+    function stickyMenu() {
+      $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+
+        if (scroll > 130) {
+          $('.site-header').addClass('is-sticky');
+        } else {
+          $('.site-header').removeClass('is-sticky');
+        }
+
+        if (scroll > 130) {
+          $('.scroll-top').show();
+        } else {
+          $('.scroll-top').hide();
+        }
       });
+
+      $('.scroll-top').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({ scrollTop: 0 }, 500);
+      });
+    }
+    stickyMenu();
+
+    function smoothScroll() {
+      $('.main-navigation li a, .scroll-link,.lets-talk').on(
+        'click',
+        function (e) {
+          e.preventDefault();
+
+          $('html, body').animate(
+            {
+              scrollTop: $($(this).attr('href')).offset().top,
+            },
+            900,
+            'linear'
+          );
+        }
+      );
     }
     smoothScroll();
     AOS.init();

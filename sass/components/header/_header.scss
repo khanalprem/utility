@@ -4,6 +4,9 @@ header {
 
     &.site-header {
         padding: 1rem;
+        position: relative;
+        z-index: 2;
+        @include transition (all .5s ease-in-out);
 
         .header-in {
             @include display-flex(flex);
@@ -20,17 +23,19 @@ header {
 
         }
 
-        a.logo {
-            max-width: 150px;
-            display: inline-flex;
-
-            @media #{$breakpoint-xl} {
-                max-width: 200px;
-            }
+        .site-logo {
+            padding-right: 1.5rem;
         }
 
-        &.sticky {
+
+        &.is-sticky {
+            position: fixed;
+            left: 0;
+            right: 0;
+            width: 100%;
+            top: 0;
             z-index: 1011 !important;
+            background-color: $body-light;
         }
     }
 }
@@ -49,17 +54,5 @@ header {
     span {
         margin-left: .5rem;
         font-size: .875rem;
-    }
-}
-
-@media #{$breakpoint-md} {
-    .Is-toggle {
-        .site-header {
-            .header-in {
-                .main-navigation {
-                    right: 0;
-                }
-            }
-        }
     }
 }

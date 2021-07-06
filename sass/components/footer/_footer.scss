@@ -1,16 +1,50 @@
 footer {
-    margin-top: 1.5rem;
-    position: fixed;
-    bottom: 0;
-    left: 250px;
-    right: 0;
-    z-index: 1;
+    padding: 3rem 0;
 
-    .naxa-card {
-        border-radius: 0;
+    .footer-social {
+        svg {
+            fill: $primary-color;
+        }
 
-        .is-back {
-            font-weight: 700;
+        li {
+            overflow: hidden;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .footer-menu {
+        margin-top: 1rem;
+        @include justify-content-start;
+
+        @media #{$breakpoint-sm} {
+            margin-top: 0;
+            @include justify-content-end;
+        }
+
+        li {
+            a {
+                color: $heading-color;
+                padding: .5rem 1rem;
+                text-transform: capitalize;
+                @include transition(all .5s ease-in-out);
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .copy-right {
+        padding: .5rem 0;
+
+        a {
+            &:hover {
+                color: $primary-color;
+            }
         }
     }
 }
