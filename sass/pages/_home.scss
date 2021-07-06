@@ -19,8 +19,31 @@ section {
         font-weight: 500;
     }
 
+    h2 {
+        font-size: $font-size-h2;
+        font-weight: normal;
+    }
+
     &.is-center {
         text-align: center;
+    }
+
+    @media #{$breakpoint-xl} {
+        h2 {
+            font-size: $font-size-h1;
+        }
+    }
+}
+
+.partner-text {
+    strong {
+        text-transform: capitalize;
+    }
+}
+
+.explore-all {
+    .common-button.no-border {
+        color: $primary-color;
     }
 }
 
@@ -42,8 +65,12 @@ section {
 
     h1 {
         margin-bottom: 1rem;
-        font-size: 3.2rem;
+        font-size: $font-size-h2;
         line-height: 1.3;
+
+        @media #{$breakpoint-xl} {
+            font-size: 3.2rem;
+        }
     }
 
     p {
@@ -83,12 +110,7 @@ section {
     }
 }
 
-.is-title {
-    h2 {
-        font-size: $font-size-h1;
-        font-weight: normal;
-    }
-}
+
 
 .whatis-utility {
     position: relative;
@@ -209,5 +231,57 @@ section {
         figure {
             overflow: hidden;
         }
+    }
+}
+
+.partner {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        z-index: 1;
+    }
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba($body-dark, .7);
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    .partner-inner {
+        position: relative;
+        z-index: 3;
+        padding: 2rem 0;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+
+            @media #{$breakpoint-ls} {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            color: $white-color;
+        }
+
+        .parnter-content {
+            max-width: 500px;
+        }
+
     }
 }

@@ -339,8 +339,8 @@
         }
     }
 
-    &.active {
-        position: absolute;
+    &.is-active {
+        position: fixed;
         top: 15px;
         right: 15px;
         z-index: 1000;
@@ -385,7 +385,7 @@
         max-width: 280px;
         padding: 15px;
         width: 100%;
-        background-color: $secondary-light;
+        background-color: $body-dark;
         z-index: 999;
         top: 0;
         right: -100%;
@@ -403,6 +403,16 @@
                     padding: .5rem .6125rem;
                     display: block;
                 }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:1024px) {
+    .Is-toggle {
+        .site-header {
+            .main-navigation {
+                right: 0;
             }
         }
     }
