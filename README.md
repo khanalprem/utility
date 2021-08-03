@@ -1,2 +1,2 @@
 # design-utility-maps
-View Demo [here](https://design-utility-maps.surge.sh/)
+Open in Surge [here](https://design-utility-maps.surge.sh/)
