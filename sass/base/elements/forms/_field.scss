@@ -12,10 +12,11 @@ textarea {
         background-color: transparent;
         background-clip: padding-box;
         border: 1px solid $border-color;
-        @include radius(10px);
+        color: $body-color;
+        background-color: #3a3a3a;
 
         @include input-placeholder {
-            color: rgba($body-color, .4);
+            color: rgba($body-color, .8);
             font-size: .775rem;
             text-transform: capitalize;
         }
@@ -54,7 +55,7 @@ textarea {
             outline: none;
             -webkit-outline: none;
             // border-color: $primary-color;
-            background-color: $secondary-light;
+            color: $white-color;
         }
 
     }
@@ -101,15 +102,6 @@ input[type="time"].form-control {
     }
 }
 
-.input-in {
-    padding: .5rem;
-    @include radius(5px);
-    background-color: $bg-color;
-
-    &:focus-within {
-        background-color: $primary-light;
-    }
-}
 
 textarea {
     &.form-control {

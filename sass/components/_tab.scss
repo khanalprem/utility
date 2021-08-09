@@ -34,7 +34,6 @@
             color: $body-light;
             cursor: pointer;
             font-size: $font-size-small;
-            @include radius(24px);
 
             span {
                 &.counter {
