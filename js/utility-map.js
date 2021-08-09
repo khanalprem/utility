@@ -26,7 +26,6 @@ Primary use: Digital platform
       });
     }
     closeModal();
-
     /*==================================
    Toggle Button
  ==================================*/
@@ -61,7 +60,7 @@ Primary use: Digital platform
     stickyMenu();
 
     function smoothScroll() {
-      $('.main-navigation li a').on('click', function (e) {
+      $('.main-navigation li a, .scroll-link').on('click', function (e) {
         e.preventDefault();
 
         $('html, body').animate(
