@@ -1,9 +1,9 @@
 /*
-Template Name: Geodetic Portal;
+Template Name: Utility map;
 Template URI:
 Author: Prem Prasad Khanal
 Author URI: http://premkhanal.com.np/
-Description: Geodetic Portal is the first humanitarian digital platform designed for project monitoring and infrastructure quality assurance. 
+Description: Utility Map is the first humanitarian digital platform designed for project monitoring and infrastructure quality assurance. 
 Version: 1.0.0
 Primary use: Monitoring system
 */
@@ -11289,6 +11289,8 @@ section {
       color: #ffffff; }
     .partner .partner-inner .parnter-content {
       max-width: 500px; }
+  .partner .common-button {
+    max-width: 100px; }
 
 .lets-talk-wrapper {
   min-height: 100vh;
