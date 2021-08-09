@@ -56,6 +56,11 @@ textarea {
             -webkit-outline: none;
             // border-color: $primary-color;
             color: $white-color;
+
+        }
+
+        &:-internal-autofill-selected {
+            background-color: #3a3a3a !important;
         }
 
     }

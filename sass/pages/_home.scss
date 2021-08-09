@@ -269,6 +269,7 @@ section {
         h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
+            line-height: 1.3;
 
             @media #{$breakpoint-ls} {
                 font-size: 2.5rem;

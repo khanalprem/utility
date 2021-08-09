@@ -21,9 +21,9 @@
         margin: 2rem;
 
         .popup-body {
-            max-width: 768px;
+            max-width: 300px;
+            min-width: 300px;
             width: 100%;
-            min-width: 768px;
             max-height: calc(100vh - 32px);
             @include radius(10px);
             box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
@@ -31,19 +31,19 @@
             @include flex-direction-column(column);
             flex-grow: 0;
             flex-shrink: 0;
-            background-color: $white-color;
+            background-color: $body-light;
             position: relative;
             @include transform(scale(0));
             @include transition(all .9s ease-in-out);
 
             @media #{$breakpoint-xs} {
-                max-width: 280px;
-                min-width: 280px;
+                max-width: 400px;
+                min-width: 400px;
             }
 
             @media #{$breakpoint-sm} {
-                max-width: 360px;
-                min-width: 360px;
+                max-width: 480px;
+                min-width: 480px;
             }
 
             @media #{$breakpoint-desktop} {
@@ -117,8 +117,17 @@
                     text-transform: capitalize;
                 }
 
+                h2 {
+                    margin-bottom: .5rem;
+                }
+
                 &.no-flex {
                     display: initial;
+                }
+
+                &.login-header {
+                    padding-right: 1.2rem;
+                    padding-left: 1.5rem;
                 }
             }
 
@@ -160,6 +169,9 @@
 
                 .custom-tab {
                     .tab-list {
+                        padding-right: .6125rem;
+                        padding-left: .6125rem;
+
                         li {
                             a {
                                 font-size: .8rem;
