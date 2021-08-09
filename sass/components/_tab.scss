@@ -57,11 +57,9 @@
         }
 
         &:not(:last-child) {
-            margin-right: .6125rem;
+            margin-right: 1rem;
 
-            @media #{$breakpoint-desktop} {
-                margin-right: .5rem;
-            }
+
         }
 
     }
@@ -69,7 +67,8 @@
     &.is-bg {
         li {
             a {
-                background-color: $white-color;
+                background-color: #3a3a3a;
+                color: $white-color;
 
                 &.is-active,
                 &:hover {

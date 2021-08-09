@@ -9835,12 +9835,10 @@ footer {
       margin-right: .6125rem;
       vertical-align: middle; }
   .tab-list li:not(:last-child) {
-    margin-right: .6125rem; }
-    @media only screen and (min-width: 1440px) {
-      .tab-list li:not(:last-child) {
-        margin-right: .5rem; } }
+    margin-right: 1rem; }
   .tab-list.is-bg li a {
-    background-color: #ffffff; }
+    background-color: #3a3a3a;
+    color: #ffffff; }
     .tab-list.is-bg li a.is-active, .tab-list.is-bg li a:hover {
       color: #ffffff;
       background-color: #ECC319; }
